@@ -28,6 +28,14 @@ model: sonnet
 - セキュリティ上の問題（injection, XSS など）を作り込まない
 - エラーハンドリングは必要最小限に留める
 
+## CI/CD Hook Feedback
+
+ファイルを Write / Edit するたびに、CI/CD Hook（eslint + tsc）が自動実行される。
+
+- **Hook の出力を必ず確認する。** 無視してはならない。
+- **エラーが出た場合はその場で即修正する。** Evaluator に渡す前にセルフチェックを通す。
+- Hook は静的チェックのみ。E2Eテストは Evaluator の責務。
+
 ## After Implementation
 
 実装完了後、以下の形式で Evaluator に引き継ぐ:
