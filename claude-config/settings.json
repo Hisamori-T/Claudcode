@@ -1,0 +1,33 @@
+{
+  "hooks": {
+    "afterWrite": [
+      {
+        "matcher": "**/*.{ts,tsx,js,jsx}",
+        "command": "npx eslint --fix $FILE && npx tsc --noEmit 2>&1 | head -20"
+      },
+      {
+        "matcher": "**/*.{css,scss}",
+        "command": "npx stylelint --fix $FILE 2>&1 | head -10"
+      }
+    ],
+    "afterEdit": [
+      {
+        "matcher": "**/*.{ts,tsx,js,jsx}",
+        "command": "npx eslint --fix $FILE && npx tsc --noEmit 2>&1 | head -20"
+      },
+      {
+        "matcher": "**/*.{css,scss}",
+        "command": "npx stylelint --fix $FILE 2>&1 | head -10"
+      }
+    ]
+  },
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": ["@anthropic-ai/playwright-mcp@latest"],
+      "env": {
+        "DISPLAY": ":1"
+      }
+    }
+  }
+}
