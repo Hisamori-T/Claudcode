@@ -88,12 +88,22 @@ Claudcode/
 
 ## 新PCのセットアップ手順
 
+### setup.ps1 の実行方法
+
+**方法1: PowerShellコマンドで実行**
+
 ```powershell
-# 1. Google Drive が同期済みであることを確認
-# 2. PowerShell を開き実行
+# Win + R → powershell → Enter して以下を貼り付け
 powershell -ExecutionPolicy Bypass -File "G:\マイドライブ\antigravity\Claudcode\setup.ps1"
-# 3. VSCode を再起動
 ```
+
+**方法2: エクスプローラーから実行**
+
+`setup.ps1` を右クリック → **「PowerShellで実行」**（ExecutionPolicy が既に緩い場合）
+
+**実行後**
+
+1. VSCode を再起動（または `Ctrl+Shift+P` → `Developer: Reload Window`）
 
 シンボリックリンクモード（開発者モード有効時）は `git pull` するだけで即反映。  
 コピーモードの場合は `setup.ps1` 再実行が必要。
